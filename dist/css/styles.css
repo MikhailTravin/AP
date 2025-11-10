@@ -8,6 +8,7 @@
   --third-family: "BeauRivage", sans-serif;
   --font3: "AbhayaLibre", sans-serif;
   --font4: "Italiana", sans-serif;
+  --font5: "Carattere", sans-serif;
 }
 
 /*
@@ -81,6 +82,13 @@
 @font-face {
   font-family: Italiana;
   src: url("../fonts/Italiana-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Carattere;
+  src: url("../fonts/Carattere-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -222,7 +230,7 @@ a {
           align-items: center;
   gap: 60px;
 }
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .header__content {
     padding: 10px 0px;
     gap: 20px;
@@ -236,6 +244,13 @@ a {
 .header__logo img {
   width: 100%;
   height: auto;
+}
+@media (max-width: 480px) {
+  .header__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 202px;
+            flex: 0 0 202px;
+  }
 }
 .header__right {
   -webkit-box-flex: 1;
@@ -266,6 +281,11 @@ a {
   }
 }
 @media (max-width: 480px) {
+  .header__right {
+    gap: 40px;
+  }
+}
+@media (max-width: 350px) {
   .header__right {
     gap: 20px;
   }
@@ -450,19 +470,11 @@ a {
   .icon-menu {
     position: relative;
     display: block;
-    width: 32px;
-    height: 23px;
+    width: 22px;
+    height: 15px;
     cursor: pointer;
     z-index: 5;
   }
-}
-@media (max-width: 1200px) and (max-width: 400px) {
-  .icon-menu {
-    width: 25px;
-    height: 15px;
-  }
-}
-@media (max-width: 1200px) {
   .icon-menu span, .icon-menu::before, .icon-menu::after {
     content: "";
     -webkit-transition: background-color 0.3s ease 0s;
@@ -472,15 +484,14 @@ a {
     width: 100%;
     height: 2px;
     border-radius: 4px;
-    background-color: var(--black);
+    background-color: #3b3b3b;
   }
   .icon-menu::before {
     top: 0;
-    width: 18px;
   }
   .icon-menu::after {
     bottom: 0;
-    width: 18px;
+    width: 12px;
   }
   .icon-menu span {
     top: calc(50% - 1px);
@@ -541,7 +552,7 @@ a {
 }
 
 .title2 {
-  font-family: var(--third-family);
+  font-family: var(--font5);
   font-weight: 400;
   font-size: 80px;
   line-height: 140%;
@@ -561,7 +572,7 @@ a {
 }
 @media (max-width: 768px) {
   .title2 {
-    font-size: 45px;
+    font-size: 40px;
     margin: 0px 0px 10px 0px;
   }
 }
@@ -692,9 +703,10 @@ a {
     padding: 100px 0px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .block-intro {
-    padding: 70px 0px;
+    background: #c2bcb9;
+    padding: 80px 0px 0px 0px;
   }
 }
 .block-intro__bg {
@@ -705,6 +717,25 @@ a {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 768px) {
+  .block-intro__bg {
+    display: none;
+  }
+}
+.block-intro__bg2 {
+  display: none;
+}
+@media (max-width: 768px) {
+  .block-intro__bg2 {
+    display: block;
+    width: calc(100% + 20px);
+    margin: 0px -10px;
+  }
+  .block-intro__bg2 img {
+    width: 100%;
+    height: auto;
+  }
 }
 .block-intro__content {
   position: relative;
@@ -720,8 +751,28 @@ a {
       -ms-flex-align: start;
           align-items: start;
 }
+@media (max-width: 768px) {
+  .block-intro__content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .block-intro__content::before {
+    content: "";
+    position: absolute;
+    left: -65px;
+    width: calc(100% + 126px);
+    height: 167px;
+    bottom: -45px;
+    -webkit-filter: blur(30px);
+            filter: blur(30px);
+    background: #c2bcb9;
+  }
+}
 .block-intro__content .title1 {
-  font-family: var(--third-family);
+  position: relative;
+  z-index: 12;
+  font-family: var(--font5);
   font-weight: 400;
   font-size: 200px;
   line-height: 100%;
@@ -731,28 +782,30 @@ a {
 }
 @media (max-width: 1500px) {
   .block-intro__content .title1 {
-    margin: 0px 0px 20px 20px;
+    margin: 0px 0px 20px 60px;
   }
 }
 @media (max-width: 992px) {
   .block-intro__content .title1 {
     font-size: 100px;
-    margin: 0px 0px 20px 10px;
+    margin: 0px 0px 20px 30px;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 768px) {
+  .block-intro__content .title1 {
+    text-align: center;
+    font-size: 80px;
+    margin: 0px 0px 20px 0px;
+  }
+}
+@media (max-width: 350px) {
   .block-intro__content .title1 {
     font-size: 70px;
-    margin: 0px 0px 15px 5px;
-  }
-}
-@media (max-width: 480px) {
-  .block-intro__content .title1 {
-    font-size: 55px;
-    margin: 0px 0px 10px 5px;
   }
 }
 .block-intro__content p {
+  position: relative;
+  z-index: 12;
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 18px;
@@ -767,18 +820,16 @@ a {
     margin: 0px 0px 25px 0px;
   }
 }
-@media (max-width: 650px) {
+@media (max-width: 768px) {
   .block-intro__content p {
-    font-size: 14px;
-    margin: 0px 0px 15px 0px;
-  }
-}
-@media (max-width: 480px) {
-  .block-intro__content p {
-    margin: 0px 0px 10px 0px;
+    text-align: center;
+    font-size: 15px;
+    margin: 0px 0px 20px 0px;
   }
 }
 .block-intro__link {
+  position: relative;
+  z-index: 12;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
@@ -793,14 +844,10 @@ a {
   color: var(--black);
   border-bottom: 1px dashed transparent;
 }
-@media (max-width: 650px) {
-  .block-intro__link {
-    font-size: 14px;
-    padding: 0px 0px 5px 0px;
-    margin: 0px 0px 0px 0px;
-  }
-}
 
+.block-biography .container {
+  padding: 0px 0px 0px 0px;
+}
 .block-biography__content {
   position: relative;
   border-radius: 15px;
@@ -826,7 +873,8 @@ a {
 }
 @media (max-width: 768px) {
   .block-biography__content {
-    padding: 20px;
+    padding: 50px 30px 0px 15px;
+    margin: -23px 0px 0px 0px;
   }
 }
 .block-biography__item {
@@ -845,7 +893,7 @@ a {
 }
 @media (max-width: 992px) {
   .block-biography__item .title2 {
-    margin: 0px 0px 20px 0px;
+    margin: 0px 0px 40px 0px;
   }
 }
 .block-biography__text {
@@ -858,11 +906,6 @@ a {
           flex-direction: column;
   gap: 30px;
 }
-@media (max-width: 768px) {
-  .block-biography__text {
-    gap: 15px;
-  }
-}
 .block-biography__text p {
   font-family: var(--second-family);
   font-weight: 400;
@@ -873,12 +916,7 @@ a {
 }
 @media (max-width: 768px) {
   .block-biography__text p {
-    font-size: 16px;
-  }
-}
-@media (max-width: 650px) {
-  .block-biography__text p {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
