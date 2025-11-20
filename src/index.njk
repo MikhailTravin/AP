@@ -70,7 +70,17 @@
 									Anastasia Prokofieva is a lyric soprano with a world-quality voice of unusual
 									timbre, with abundant fullness, warmth and femininity.
 								</p>
-								<a href="#" class="block-albums__link">Listen on spotify</a>
+								<div class="block-albums__links">
+									<a href="https://open.spotify.com/album/3KudNAufw7n0Qp6o1OrpAe?si=0jIz9OdARpC_RANqNSDQTQ"
+										class="block-albums__link">
+										<img src="img/spotify-logo.webp" alt="">
+										<span>Listen on spotify</span>
+									</a>
+									<a href="#" class="block-albums__link">
+										<img src="img/apple-music.webp" alt="">
+										<span>Listen on Apple Music</span>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="block-albums__column">
@@ -83,7 +93,18 @@
 									Anastasia Prokofieva is a lyric soprano with a world-quality voice of unusual
 									timbre, with abundant fullness, warmth and femininity.
 								</p>
-								<a href="#" class="block-albums__link">Listen on spotify</a>
+								<div class="block-albums__links">
+									<a href="https://open.spotify.com/track/0MlrWNkrsYIV5Sbu1fZdQT?si=NjP17bfWT-q3RKbG5M_nng&context=spotify%3Asearch"
+										class="block-albums__link">
+										<img src="img/spotify-logo.webp" alt="">
+										<span>Listen on spotify</span>
+									</a>
+									<a href="https://music.apple.com/ru/album/the-secret-garden/1541945478"
+										class="block-albums__link">
+										<img src="img/apple-music.webp" alt="">
+										<span>Listen on Apple Music</span>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="block-albums__column">
@@ -96,7 +117,18 @@
 									Anastasia Prokofieva is a lyric soprano with a world-quality voice of unusual
 									timbre, with abundant fullness, warmth and femininity.
 								</p>
-								<a href="#" class="block-albums__link">Listen on spotify</a>
+								<div class="block-albums__links">
+									<a href="https://open.spotify.com/track/02VpIE1HL9k7qJtoSgnrVg?si=mNW9qda8Rh-ceJs8v2teXg&context=spotify%3Asearch"
+										class="block-albums__link">
+										<img src="img/spotify-logo.webp" alt="">
+										<span>Listen on spotify</span>
+									</a>
+									<a href="https://music.apple.com/ru/album/lheure-exquise/1503016537"
+										class="block-albums__link">
+										<img src="img/apple-music.webp" alt="">
+										<span>Listen on Apple Music</span>
+									</a>
+								</div>
 							</div>
 						</div>
 						<div class="block-albums__column">
@@ -109,7 +141,12 @@
 									Anastasia Prokofieva is a lyric soprano with a world-quality voice of unusual
 									timbre, with abundant fullness, warmth and femininity.
 								</p>
-								<a href="#" class="block-albums__link">Listen on spotify</a>
+								<div class="block-albums__links">
+									<a href="#" class="block-albums__link">
+										<img src="img/spotify-logo.webp" alt="">
+										<span>Listen on spotify</span>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -403,22 +440,22 @@
 							</div>
 						</div>
 						<div class="block-contacts__right">
-							<form action="#">
+							<form data-ajax action="sendmail.php" method="POST">
 								<img loading="lazy" src="img/image9.webp" alt="">
 								<div class="form-block-contacts">
 									<div class="form-block-contacts__title">Send a message now</div>
 									<div class="form-block-contacts__inputs">
 										<div class="form-block-contacts__input">
-											<input autocomplete="off" type="text" name="form[]" data-required
-												data-error="Обязательное поле" placeholder="Name"
-												class="input">
+											<input autocomplete="off" type="text" name="name" data-required
+												data-error="Обязательное поле" placeholder="Name" class="input">
 										</div>
 										<div class="form-block-contacts__input">
-											<input autocomplete="off" type="text" name="form[]" data-required="email"
+											<input autocomplete="off" type="text" name="email" data-required="email"
 												data-error="Обязательное поле" placeholder="Email" class="input">
 										</div>
 										<div class="form-block-contacts__input">
-											<textarea placeholder="Message" class="input textarea"></textarea>
+											<textarea placeholder="Message" name="text"
+												class="input textarea"></textarea>
 										</div>
 									</div>
 									<button type="submit" class="form-block-contacts__button">Send message</button>
