@@ -682,17 +682,36 @@ function formSubmit() {
         const formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET';
         const formData = new FormData(form);
 
+        console.log('Отправка формы на:', formAction); // Для отладки
+
         form.classList.add('_sending');
-        const response = await fetch(formAction, {
-          method: formMethod,
-          body: formData
-        });
-        if (response.ok) {
-          let responseResult = await response.json();
-          form.classList.remove('_sending');
-          formSent(form, responseResult);
-        } else {
-          alert("Помилка");
+
+        try {
+          const response = await fetch(formAction, {
+            method: formMethod,
+            body: formData
+          });
+
+          console.log('Статус ответа:', response.status); // Для отладки
+
+          if (response.ok) {
+            let responseResult = await response.json();
+            form.classList.remove('_sending');
+            formSent(form, responseResult);
+          } else {
+            // Более детальная обработка ошибок
+            if (response.status === 404) {
+              alert("Файл отправки не найден (404). Проверьте путь к sendmail.php");
+            } else if (response.status === 500) {
+              alert("Ошибка сервера (500). Проверьте PHP код");
+            } else {
+              alert("Ошибка сервера: " + response.status);
+            }
+            form.classList.remove('_sending');
+          }
+        } catch (error) {
+          console.error('Ошибка fetch:', error);
+          alert("Сетевая ошибка: " + error.message);
           form.classList.remove('_sending');
         }
       } else if (form.hasAttribute('data-dev')) {
